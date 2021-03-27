@@ -28,6 +28,18 @@ void preOrder(struct Node *root)
     preOrder(root->right);
 }
 
+//InOrder Traversal
+void inOrder(struct Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    inOrder(root->left);
+    cout << root->data << ",";
+    inOrder(root->right);
+}
+
 int main()
 {
 
@@ -65,4 +77,6 @@ int main()
    */
     cout << "\nPreOrder Sequence : " << endl;
     preOrder(root);
+    cout << "\nInorder Sequence : " << endl;
+    inOrder(root);
 }
