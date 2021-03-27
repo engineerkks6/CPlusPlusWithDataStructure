@@ -14,6 +14,19 @@ struct Node
         right = NULL;
     }
 };
+//Preorder Traversal
+void preOrder(struct Node *root)
+{
+
+    if (root == NULL)
+    {
+        return;
+    }
+
+    cout << root->data << ",";
+    preOrder(root->left);
+    preOrder(root->right);
+}
 
 int main()
 {
@@ -38,7 +51,7 @@ int main()
      4   5
 
     */
-     root->right->left = new Node(6);
+    root->right->left = new Node(6);
     root->right->right = new Node(7);
 
     /* 
@@ -50,4 +63,6 @@ int main()
      4   5 6   7
 
    */
+    cout << "\nPreOrder Sequence : " << endl;
+    preOrder(root);
 }
