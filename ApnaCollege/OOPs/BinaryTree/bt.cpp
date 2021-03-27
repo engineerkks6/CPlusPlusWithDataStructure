@@ -39,6 +39,15 @@ void inOrder(struct Node *root)
     cout << root->data << ",";
     inOrder(root->right);
 }
+//PostOreder Traversal
+void postOrder(struct Node *root)
+{
+    if (root == NULL)
+        return;
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << root->data << ",";
+}
 
 int main()
 {
@@ -79,4 +88,6 @@ int main()
     preOrder(root);
     cout << "\nInorder Sequence : " << endl;
     inOrder(root);
+    cout << "\nPostOrder Sequence : " << endl;
+    postOrder(root);
 }
